@@ -1,0 +1,144 @@
+body  {
+    /* border: 2px black solid; */
+    /* box-sizing: border-box; */
+    background-color: rgb(34, 167, 89);
+  }
+  
+
+#container{ 
+
+    padding: 100px;
+}
+
+.calBody{ 
+
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap ;
+    align-content: space-evenly;
+    justify-content: center;
+    margin: auto;
+
+    width: 440px;
+    height: 500px;
+    padding: 15px;
+    border-radius: 10px;
+
+    background-color: hsl(41, 87%, 54%);
+    box-shadow: 0 9px rgb(201, 92, 3);
+}
+
+.display{
+
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    width: 400px;
+    height: 150px;
+    background-color: hsl(41, 87%, 54%);
+    
+}
+
+.display .historyTwo,.historyOne{
+
+    background-color: beige;
+    flex: 1 2 auto;
+}
+
+.display .historyTwo{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: inset 0px 4px #1a8f29;
+}
+
+.display .calculation{
+    flex: 2 1 auto;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: beige;
+    margin-bottom: 10px;
+}
+
+.display div {
+
+    flex: 1;
+}
+
+.battery{
+    background-color: white;
+    border-radius: 10px;
+}
+
+.buttons{
+    display: flex;
+    flex: 1 1 0;
+    justify-content: space-between;
+   
+}
+
+
+.numButtons{
+    /* height: 320px; */
+    width: 240px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+   
+
+}
+
+.numButtons button{
+
+    width: 70px ;
+    height: 70px;
+    flex: 1 1 auto;
+    border-radius: 10%;
+    border: none;
+
+    box-sizing: border-box;
+    box-shadow: 0 4px rgb(26, 143, 41);
+    background-color: hsl(27, 87%, 49%);
+    font-size: 25px;
+    color: aliceblue;
+
+   
+}
+
+.numButtons .zero{
+
+    width: 140px;
+    flex-grow: 2;
+}
+
+.symbols{
+
+    width: 160px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    row-gap: normal;
+
+
+}
+.symbols button{
+
+    background-color: hsl(52, 88%, 57%) ;
+    width: 70px ;
+    height: 70px;
+    flex: 1 1 auto;
+    border-radius: 10%;
+    border: none;
+    box-shadow: 0 4px rgb(26, 143, 41);
+    font-size: 25px;
+    color: aliceblue;
+
+    
+
+}
+
+.symbols .equals {
+    width: 140px;
+    height: 144px;
+   
+    border-radius: 10%;
+}
