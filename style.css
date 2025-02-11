@@ -101,6 +101,9 @@ body  {
     font-size: 25px;
     color: aliceblue;
     cursor: pointer;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
     
     
 }
@@ -117,7 +120,7 @@ body  {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    row-gap: normal;
+    /* row-gap: normal; */
     
     
 }
@@ -133,17 +136,17 @@ body  {
     font-size: 25px;
     color: aliceblue;
     cursor: pointer;
-
-    
-    
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 30px;
     
 }
 
 .symbols .equals {
     width: 140px;
     height: 144px;
-    
     border-radius: 10%;
+    transform: translateY(2px);
 }
 
 button:active {
