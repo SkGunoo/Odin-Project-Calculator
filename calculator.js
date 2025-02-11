@@ -1,3 +1,10 @@
+const numBtns = document.querySelectorAll(".numButtons button");
+const symBtns  =document.querySelectorAll(".symbols");
+const clearBtn = document.querySelector(".clear");
+const mainDisplay = document.querySelector(".calculation");
+
+
+
 function add(a, b){
 
     return a + b;
@@ -35,3 +42,5 @@ function operate(a, b, operator){
             return divide(a,b);
     } 
 }
+
+
