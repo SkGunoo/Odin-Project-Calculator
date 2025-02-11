@@ -44,3 +44,19 @@ function operate(a, b, operator){
 }
 
 
+function putNumbersOnScreen(){
+
+    numBtns.forEach((button)=>{
+ 
+     button.addEventListener("click", (btn)=>{
+         mainDisplay.textContent = mainDisplay.textContent + button.textContent;
+     })
+     
+    })
+ 
+ }
+ 
+ 
+ 
+ 
+ putNumbersOnScreen();
