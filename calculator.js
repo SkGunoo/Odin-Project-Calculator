@@ -51,12 +51,21 @@ function putNumbersOnScreen(){
      button.addEventListener("click", (btn)=>{
          mainDisplay.textContent = mainDisplay.textContent + button.textContent;
      })
-     
+
     })
  
  }
  
+ function clearDisplayBtn(){
+
+    clearBtn.addEventListener("click", (button)=>{
+
+        mainDisplay.textContent = '';
+    })
+
+ }
  
  
  
  putNumbersOnScreen();
+ clearDisplayBtn();
