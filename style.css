@@ -64,9 +64,30 @@ body  {
     flex: 1;
 }
 
+.batteryRow{
+    
+    display: flex;
+    gap: 5px;
+}
+
 .battery{
     background-color: white;
     border-radius: 10px;
+}
+
+.clear{
+
+    flex-basis: 50px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    box-shadow: 0 4px rgb(26, 143, 41);
+    background-color: hsl(7, 77%, 49%);
+    color: aliceblue;
+    cursor: pointer;
+
 }
 
 .buttons{
@@ -95,15 +116,14 @@ body  {
     border-radius: 10%;
     border: none;
     
+    font-size: 30px;
+    font-weight: bold;
+    font-family: sans-serif;
     box-sizing: border-box;
     box-shadow: 0 4px rgb(26, 143, 41);
     background-color: hsl(27, 87%, 49%);
-    font-size: 25px;
     color: aliceblue;
     cursor: pointer;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 30px;
     
     
 }
@@ -120,8 +140,7 @@ body  {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    /* row-gap: normal; */
-    
+
     
 }
 .symbols button{
