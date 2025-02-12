@@ -7,6 +7,7 @@ const mainDisplay = document.querySelector(".calculation");
 const secondDisplay = document.querySelector(".historyOne");
 const thirdDisplay = document.querySelector(".historyTwo");
 const equalBtn = document.querySelector(".equals");
+const backBtn = document.querySelector(".backButton");
 const numbers = ["1","2","3","4","5","6","7","8","9","0"];
 const symbols = ['+','-','*','÷'];
 let  divideByZeroError = false ; 
@@ -99,6 +100,18 @@ function putNumbersOnScreen(){
 
  }
 
+ function deleteLastDigitBackButtonPressed(){
+
+    backBtn.addEventListener("click",(button)=> {
+
+        let string = mainDisplay.textContent;
+        mainDisplay.textContent = string.substring(0,mainDisplay.textContent.length -1);
+        currentNum = currentNum.substring(0, currentNum.length -1);
+    });
+ }
+
+ 
+
  function addSymbolsOnScreen(){
 
     //only put symbols when there is no symbols left and right 
@@ -177,4 +190,4 @@ function putNumbersOnScreen(){
  clearDisplayBtn();
  addSymbolsOnScreen();
  calculateNumbers();
-
+ deleteLastDigitBackButtonPressed();
