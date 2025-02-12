@@ -122,7 +122,15 @@ function putNumbersOnScreen(){
             
             //prevents inputting symbols back to back 
             let lastDigit = mainDisplay.textContent[mainDisplay.textContent.length -1];
-            currentNum = '';
+            if(button.textContent == '=' && mainDisplay.textContent.includes(symbols) == false){
+
+                //preventing multiple dots when you pressed dot after clicking '='
+                //beacuse '=' button is part of symBtns. 
+            }
+            else{
+                
+                currentNum = '';
+            }
             if(numbers.includes(lastDigit) && symbols.includes(button.textContent)){
                 mainDisplay.textContent = mainDisplay.textContent + button.textContent;
             } 
