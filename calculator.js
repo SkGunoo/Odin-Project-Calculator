@@ -177,7 +177,11 @@ function putNumbersOnScreen(){
             if(!divideByZeroError){
 
                 console.log(answer);
+
                 mainDisplay.textContent = String(answer).concat('',mainDisplay.textContent);
+                if(mainDisplay.textContent[mainDisplay.textContent.length -1] == '.'){
+                    mainDisplay.textContent = mainDisplay.textContent.substring(0,mainDisplay.textContent.length -1);
+                }
                 updateHistory(expression[0],answer);
             }
             else{
