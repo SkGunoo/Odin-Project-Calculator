@@ -13,6 +13,7 @@ const symbols = ['+','-','*','÷'];
 let  divideByZeroError = false ; 
 // let expression = [];
 let currentNum;
+let lastAnswer; 
 
 
 
@@ -77,6 +78,16 @@ function putNumbersOnScreen(){
         if(button.textContent == '.' && currentNum.includes('.')){
             
             //do nothing if user try to input additional dots.
+        }
+
+        //starts to calculation if you typed a number right after the calculation
+        else if(mainDisplay.textContent == lastAnswer ){
+            mainDisplay.textContent= '';
+            currentNum= '';
+            currentNum = currentNum == undefined? + button.textContent: currentNum + button.textContent;
+            console.log(`current num: ${currentNum}`);
+            mainDisplay.textContent = mainDisplay.textContent + button.textContent;
+
         }
         else{
             currentNum = currentNum == undefined? + button.textContent: currentNum + button.textContent;
@@ -173,7 +184,7 @@ function putNumbersOnScreen(){
             
             //prevents long decimal 
             let answer = Math.round(operate(Number(parts[0]),Number(parts[2]),parts[1])*100000)/100000;
-            
+            lastAnswer = String(answer);
             if(!divideByZeroError){
 
                 console.log(answer);
