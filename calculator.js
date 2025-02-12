@@ -108,7 +108,7 @@ function putNumbersOnScreen(){
     equalBtn.addEventListener("click",(button)=>{
 
         //check the first expession [numbers][sybol][numbers] 
-        let re = /\d+[+\-*÷]\d+/;
+        let re = /\d+(\.\d+)?[+\-*÷]\d+(\.\d+)?/;
 
         let expression = mainDisplay.textContent.match(re);
         //preventing errors from operating on incompleted expressions 
