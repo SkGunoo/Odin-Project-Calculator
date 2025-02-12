@@ -10,7 +10,8 @@ const equalBtn = document.querySelector(".equals");
 const numbers = ["1","2","3","4","5","6","7","8","9","0"];
 const symbols = ['+','-','*','÷'];
 let  divideByZeroError = false ; 
-
+// let expression = [];
+let currentNum;
 
 
 
@@ -69,7 +70,18 @@ function putNumbersOnScreen(){
             mainDisplay.textContent='';
             divideByZeroError = false;
         }
-         mainDisplay.textContent = mainDisplay.textContent + button.textContent;
+       
+
+        //this prevents putting tow dots in single sequence of number
+        if(button.textContent == '.' && currentNum.includes('.')){
+            
+            //do nothing if user try to input additional dots.
+        }
+        else{
+            currentNum = currentNum == undefined? + button.textContent: currentNum + button.textContent;
+            console.log(`current num: ${currentNum}`);
+            mainDisplay.textContent = mainDisplay.textContent + button.textContent;
+        }
 
      })
 
@@ -82,6 +94,7 @@ function putNumbersOnScreen(){
     clearBtn.addEventListener("click", (button)=>{
 
         mainDisplay.textContent = '';
+        currentNum = '';
     });
 
  }
@@ -96,6 +109,7 @@ function putNumbersOnScreen(){
             
             //prevents inputting symbols back to back 
             let lastDigit = mainDisplay.textContent[mainDisplay.textContent.length -1];
+            currentNum = '';
             if(numbers.includes(lastDigit) && symbols.includes(button.textContent)){
                 mainDisplay.textContent = mainDisplay.textContent + button.textContent;
             } 
@@ -160,3 +174,4 @@ function putNumbersOnScreen(){
  clearDisplayBtn();
  addSymbolsOnScreen();
  calculateNumbers();
+
