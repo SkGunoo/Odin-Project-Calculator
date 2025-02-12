@@ -149,7 +149,10 @@ function putNumbersOnScreen(){
             
             //split the epxression to parts
             let parts = expression[0].split(/([+\-*÷])/);
-            let answer = operate(Number(parts[0]),Number(parts[2]),parts[1]);
+            
+            //prevents long decimal 
+            let answer = Math.round(operate(Number(parts[0]),Number(parts[2]),parts[1])*100000)/100000;
+            
             if(!divideByZeroError){
 
                 console.log(answer);
