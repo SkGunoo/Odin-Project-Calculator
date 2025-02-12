@@ -96,7 +96,7 @@ body  {
     border-radius: 10px;
 }
 
-.clear{
+.clear , .backButton{
 
     flex-basis: 50px;
     border-radius: 10px;
