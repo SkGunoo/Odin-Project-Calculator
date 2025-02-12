@@ -9,6 +9,7 @@ const thirdDisplay = document.querySelector(".historyTwo");
 const equalBtn = document.querySelector(".equals");
 const numbers = ["1","2","3","4","5","6","7","8","9","0"];
 const symbols = ['+','-','*','÷'];
+let  divideByZeroError = false ; 
 
 
 
@@ -48,6 +49,10 @@ function operate(a, b, operator){
             return multiply(a,b);
 
         case '÷':
+            if(a == 0 || b == 0){
+                divideByZeroError = true; 
+                return "can't divide by my income";
+            }
             return divide(a,b);
     } 
 }
@@ -56,8 +61,14 @@ function operate(a, b, operator){
 function putNumbersOnScreen(){
 
     numBtns.forEach((button)=>{
+
+  
  
      button.addEventListener("click", (btn)=>{
+        if(divideByZeroError ==true){
+            mainDisplay.textContent='';
+            divideByZeroError = false;
+        }
          mainDisplay.textContent = mainDisplay.textContent + button.textContent;
 
      })
@@ -125,9 +136,16 @@ function putNumbersOnScreen(){
             //split the epxression to parts
             let parts = expression[0].split(/([+\-*÷])/);
             let answer = operate(Number(parts[0]),Number(parts[2]),parts[1]);
-            console.log(answer);
-            mainDisplay.textContent = String(answer).concat('',mainDisplay.textContent);
-            updateHistory(expression[0],answer);
+            if(!divideByZeroError){
+
+                console.log(answer);
+                mainDisplay.textContent = String(answer).concat('',mainDisplay.textContent);
+                updateHistory(expression[0],answer);
+            }
+            else{
+                mainDisplay.textContent = answer;
+                
+            }
 
         }
         
