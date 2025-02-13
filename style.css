@@ -196,6 +196,7 @@ button:active {
     transform: translateY(2px);
 }
 
+
 button:hover {
     transform: scale(1.05);
     color :rgb(248, 20, 20);
