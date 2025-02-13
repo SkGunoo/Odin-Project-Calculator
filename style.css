@@ -195,3 +195,8 @@ button:active {
     box-shadow: 0 2px rgb(13, 65, 20);
     transform: translateY(2px);
 }
+
+button:hover {
+    transform: scale(1.05);
+    color :rgb(248, 20, 20);
+  }

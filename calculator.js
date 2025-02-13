@@ -341,6 +341,41 @@ function putNumbersOnScreen(){
 
  }
  
+ document.addEventListener("keydown", (event) => {
+    const key = event.key;
+    
+    if (numbers.includes(key)) {
+        console.log(key);
+        simulateButtonClick(document.querySelector(`.numButtons button[data-key="${key}"]`));
+    } 
+    else if (symbols.includes(key)) {
+        console.log(key);
+        simulateButtonClick(document.querySelector(`.symbols button[data-key="${key}"]`));
+    } 
+
+    else if (key === '/'){
+        console.log(key);
+        simulateButtonClick(document.querySelector(`.symbols button[data-key="/"]`));
+    }
+    else if (key === "Enter") {
+        event.preventDefault(); // Prevent form submission if inside a form
+        simulateButtonClick(equalBtn);
+    } 
+    else if (key === "Backspace") {
+        simulateButtonClick(backBtn);
+    } 
+    else if (key.toLowerCase() === "c") {
+        simulateButtonClick(clearBtn);
+    }
+});
+
+// Function to simulate a button click
+function simulateButtonClick(button) {
+    if (button) {
+        button.click();
+    }
+}
+
  
 putNumbersOnScreen();
 clearDisplayBtn();
